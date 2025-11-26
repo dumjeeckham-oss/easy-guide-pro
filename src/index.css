@@ -8,42 +8,42 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Ivory/White backgrounds for maximum readability */
-    --background: 40 20% 98%;
-    --foreground: 220 25% 10%;
+    /* Ivory/Beige backgrounds for maximum readability */
+    --background: 40 25% 97%;
+    --foreground: 0 0% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 10%;
+    --card-foreground: 0 0% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 10%;
+    --popover-foreground: 0 0% 15%;
 
-    /* Trustworthy light blue - primary action color */
-    --primary: 210 80% 55%;
+    /* Warm coral/red - primary action color (동백꽃 inspired) */
+    --primary: 6 78% 57%;
     --primary-foreground: 0 0% 100%;
 
-    /* Soft gray for secondary elements */
-    --secondary: 210 15% 92%;
-    --secondary-foreground: 220 25% 10%;
+    /* Light beige for secondary elements */
+    --secondary: 30 20% 94%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 210 15% 95%;
-    --muted-foreground: 220 15% 40%;
+    --muted: 30 15% 95%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Warm accent for emphasis */
-    --accent: 25 85% 60%;
+    /* Lighter coral for accents */
+    --accent: 12 85% 65%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 88%;
-    --input: 210 20% 88%;
-    --ring: 210 80% 55%;
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 6 78% 57%;
 
     --radius: 0.75rem;
 
     /* Section separator */
-    --separator: 210 15% 92%;
+    --separator: 30 15% 90%;
   }
 }
 
@@ -54,7 +54,9 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Pretendard', 'Noto Sans KR', -apple-system, sans-serif;
     font-size: 1.25rem; /* 20px minimum for readability */
+    font-weight: 600; /* Bold for better readability */
     line-height: 1.6;
   }
 
