@@ -47,16 +47,17 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+        separator: "hsl(var(--separator))",
+      },
+      fontSize: {
+        'base': '1.25rem', // 20px
+        'lg': '1.5rem',    // 24px
+        'xl': '1.75rem',   // 28px
+        '2xl': '2rem',     // 32px
+        '3xl': '2.5rem',   // 40px
+        '4xl': '3rem',     // 48px
+        '5xl': '3.5rem',   // 56px
+        '6xl': '4rem',     // 64px
       },
       borderRadius: {
         lg: "var(--radius)",
