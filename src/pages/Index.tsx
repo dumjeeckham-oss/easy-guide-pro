@@ -8,6 +8,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FloatingNav } from "@/components/FloatingNav";
+import welfareStatusImg from "@/assets/welfare-status.png";
+import scheduleImg from "@/assets/schedule.png";
+import provisionRecordImg from "@/assets/provision-record.png";
+import weeklyReportImg from "@/assets/weekly-report.png";
 
 const Index = () => {
   return (
@@ -209,10 +213,7 @@ const Index = () => {
               </AccordionTrigger>
               <AccordionContent className="pt-4">
                 <Card className="bg-muted p-6">
-                  <p className="text-center text-muted-foreground">
-                    복지현황 이미지가 여기에 표시됩니다.<br />
-                    이미지를 업로드하여 교체하세요.
-                  </p>
+                  <img src={welfareStatusImg} alt="동백센터 복지현황" className="w-full h-auto" />
                 </Card>
               </AccordionContent>
             </AccordionItem>
@@ -234,18 +235,24 @@ const Index = () => {
           <div className="grid gap-6 md:grid-cols-2">
             <Button
               size="lg"
+              asChild
               className="h-auto py-8 text-xl font-bold flex flex-col gap-3 bg-primary hover:bg-primary/90"
             >
-              <ShoppingCart className="w-10 h-10" />
-              장보기 업무 보고서 작성하기
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBFbqYVJ6CDtMLfeAoLQKRbaMKtQu6ZY7Zk3UZhvRBN6ptLg/viewform?pli=1" target="_blank" rel="noopener noreferrer">
+                <ShoppingCart className="w-10 h-10" />
+                장보기 업무 보고서 작성하기
+              </a>
             </Button>
 
             <Button
               size="lg"
+              asChild
               className="h-auto py-8 text-xl font-bold flex flex-col gap-3 bg-primary hover:bg-primary/90"
             >
-              <Users className="w-10 h-10" />
-              활동지원사 구직 신청하기
+              <a href="https://bcmedcoop.org/bbs/board.php?bo_table=support5" target="_blank" rel="noopener noreferrer">
+                <Users className="w-10 h-10" />
+                활동지원사 구직 신청하기
+              </a>
             </Button>
           </div>
 
@@ -256,10 +263,11 @@ const Index = () => {
               </AccordionTrigger>
               <AccordionContent className="pt-4">
                 <Card className="bg-muted p-6">
-                  <p className="text-center text-muted-foreground">
-                    바우처 결제 방법 PDF가 여기에 표시됩니다.<br />
-                    PDF 파일을 업로드하세요.
-                  </p>
+                  <iframe 
+                    src="/documents/voucher-payment-method.pdf" 
+                    className="w-full h-[600px]"
+                    title="바우처 결제 방법"
+                  />
                 </Card>
               </AccordionContent>
             </AccordionItem>
@@ -275,45 +283,39 @@ const Index = () => {
         <div className="max-w-5xl mx-auto space-y-8">
           <h2 className="text-center text-foreground mb-8 flex items-center justify-center gap-3">
             <FileText className="w-10 h-10 text-primary" />
-            업무 서식 예시 다운로드
+            업무 서식 참조
           </h2>
 
           <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem value="item-7" className="bg-card rounded-lg px-6 border-2">
               <AccordionTrigger className="text-xl font-bold hover:text-primary">
-                📅 2022년 급여제공 일정표 (5월)
+                📅 일정표
               </AccordionTrigger>
               <AccordionContent className="pt-4">
                 <Card className="bg-muted p-6">
-                  <p className="text-center text-muted-foreground">
-                    일정표 이미지가 여기에 표시됩니다.
-                  </p>
+                  <img src={scheduleImg} alt="급여제공 일정표" className="w-full h-auto" />
                 </Card>
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-8" className="bg-card rounded-lg px-6 border-2">
               <AccordionTrigger className="text-xl font-bold hover:text-primary">
-                📋 2025 활동지원급여 제공기록지 (5월)
+                📋 제공기록지
               </AccordionTrigger>
               <AccordionContent className="pt-4">
                 <Card className="bg-muted p-6">
-                  <p className="text-center text-muted-foreground">
-                    제공기록지 이미지가 여기에 표시됩니다.
-                  </p>
+                  <img src={provisionRecordImg} alt="활동지원급여 제공기록지" className="w-full h-auto" />
                 </Card>
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-9" className="bg-card rounded-lg px-6 border-2">
               <AccordionTrigger className="text-xl font-bold hover:text-primary">
-                📝 2024년 주간 업무 보고
+                📝 주간 업무 보고
               </AccordionTrigger>
               <AccordionContent className="pt-4">
                 <Card className="bg-muted p-6">
-                  <p className="text-center text-muted-foreground">
-                    업무 보고 이미지가 여기에 표시됩니다.
-                  </p>
+                  <img src={weeklyReportImg} alt="주간 업무 보고" className="w-full h-auto" />
                 </Card>
               </AccordionContent>
             </AccordionItem>
