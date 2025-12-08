@@ -49,7 +49,7 @@ const Index = () => {
           {/* Notice Banner */}
           <Card className="bg-accent/10 border-2 border-accent p-6">
             <p className="text-xl font-bold text-accent-foreground">
-              📢 공지: 2024년 5월 급여 정산일 변경 안내
+              📢 공지: 2025년 송년회 일정 12월 23일 오후 5:30
             </p>
           </Card>
         </div>
