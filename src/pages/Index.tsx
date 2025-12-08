@@ -12,6 +12,7 @@ import welfareStatusImg from "@/assets/welfare-status.png";
 import scheduleImg from "@/assets/schedule.png";
 import provisionRecordImg from "@/assets/provision-record.png";
 import weeklyReportImg from "@/assets/weekly-report.png";
+import dongbaekLogo from "@/assets/dongbaek-logo.png";
 
 const Index = () => {
   return (
@@ -21,11 +22,9 @@ const Index = () => {
       {/* Section 0: Hero Section */}
       <section id="hero" className="bg-background py-12 px-6 md:px-12">
         <div className="max-w-5xl mx-auto text-center space-y-8">
-          {/* Logo Placeholder - 사용자가 나중에 로고 이미지를 업로드할 수 있습니다 */}
+          {/* 동백센터 로고 */}
           <div className="flex justify-center mb-6">
-            <div className="w-48 h-48 bg-primary/10 rounded-full flex items-center justify-center">
-              <p className="text-primary font-bold text-2xl">동백센터</p>
-            </div>
+            <img src={dongbaekLogo} alt="동백 장애인활동지원센터 로고" className="h-24 md:h-32 w-auto" />
           </div>
 
           <h1 className="text-foreground leading-tight text-4xl md:text-5xl font-bold">
