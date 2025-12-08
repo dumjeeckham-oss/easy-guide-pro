@@ -40,8 +40,8 @@ const Index = () => {
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <Phone className="w-12 h-12" />
               <div className="text-left">
-                <p className="text-2xl font-bold">긴급 문의</p>
-                <p className="text-3xl font-bold mt-2">010-3123-4832</p>
+                <p className="text-2xl font-bold">문의사항</p>
+                <p className="text-3xl font-bold mt-2">032-675-7517 (내선 2번)</p>
               </div>
             </div>
           </Card>

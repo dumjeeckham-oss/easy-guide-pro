@@ -18,15 +18,16 @@ export const FloatingNav = () => {
   };
 
   return (
-    <Card className="fixed top-6 right-6 w-64 p-4 shadow-xl z-50 bg-card/95 backdrop-blur-sm">
-      <h3 className="text-xl font-bold mb-4 text-foreground">빠른 이동</h3>
-      <div className="space-y-2">
+    <Card className="fixed top-2 right-2 md:top-4 md:right-4 w-auto p-2 shadow-lg z-50 bg-card/95 backdrop-blur-sm">
+      <h3 className="text-sm font-bold mb-1 text-foreground px-2">빠른 이동</h3>
+      <div className="flex flex-wrap gap-1">
         {sections.map((section) => (
           <Button
             key={section.id}
             onClick={() => scrollToSection(section.id)}
             variant="ghost"
-            className="w-full justify-start text-lg hover:bg-primary/10 hover:text-primary"
+            size="sm"
+            className="text-xs px-2 py-1 h-auto hover:bg-primary/10 hover:text-primary"
           >
             {section.title}
           </Button>
