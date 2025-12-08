@@ -255,18 +255,60 @@ const Index = () => {
             </Button>
           </div>
 
-          <Accordion type="single" collapsible className="mt-8">
+          <Accordion type="single" collapsible className="mt-8 space-y-4">
             <AccordionItem value="item-6" className="bg-card rounded-lg px-6 border-2">
               <AccordionTrigger className="text-xl font-bold hover:text-primary">
-                💳 바우처 결제 방법
+                📱 1. 서비스 바우처 결제하기 (스마트폰 바우처 결제)
               </AccordionTrigger>
               <AccordionContent className="pt-4">
-                <Card className="bg-muted p-6">
-                  <iframe 
-                    src="/documents/voucher-payment-method.pdf" 
-                    className="w-full h-[600px]"
-                    title="바우처 결제 방법"
-                  />
+                <Card className="bg-muted p-4">
+                  <div className="aspect-video">
+                    <iframe 
+                      src="https://www.youtube.com/embed/nQ02mKJ1fxA" 
+                      className="w-full h-full rounded-lg"
+                      title="서비스 바우처 결제하기"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </Card>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6-2" className="bg-card rounded-lg px-6 border-2">
+              <AccordionTrigger className="text-xl font-bold hover:text-primary">
+                📱 2. 소급결제 하기 (스마트폰 바우처 결제)
+              </AccordionTrigger>
+              <AccordionContent className="pt-4">
+                <Card className="bg-muted p-4">
+                  <div className="aspect-video">
+                    <iframe 
+                      src="https://www.youtube.com/embed/Ti_qn1Lp2Yk" 
+                      className="w-full h-full rounded-lg"
+                      title="소급결제 하기"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </Card>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6-3" className="bg-card rounded-lg px-6 border-2">
+              <AccordionTrigger className="text-xl font-bold hover:text-primary">
+                📱 3. 서비스 바우처 결제 취소하기 (스마트폰 바우처 결제)
+              </AccordionTrigger>
+              <AccordionContent className="pt-4">
+                <Card className="bg-muted p-4">
+                  <div className="aspect-video">
+                    <iframe 
+                      src="https://www.youtube.com/embed/4WVuH4wuapY" 
+                      className="w-full h-full rounded-lg"
+                      title="서비스 바우처 결제 취소하기"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
                 </Card>
               </AccordionContent>
             </AccordionItem>
@@ -328,7 +370,7 @@ const Index = () => {
           문의사항이 있으시면 언제든지 전화주세요
         </p>
         <p className="text-2xl font-bold mt-4">
-          📞 010-3123-4832
+          📞 032-675-7517 (내선 2번)
         </p>
         <p className="text-lg mt-4">
           부천의료복지사회적협동조합 동백 장애인활동지원센터
