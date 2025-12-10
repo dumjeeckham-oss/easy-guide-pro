@@ -1,4 +1,4 @@
-import { Phone, FileText, ShoppingCart, AlertCircle, MapPin, Users } from "lucide-react";
+import { Phone, FileText, ShoppingCart, AlertCircle, MapPin, Users, Lightbulb, Heart, MapPinned } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -372,6 +372,120 @@ const Index = () => {
                 <Card className="bg-muted p-6">
                   <img src={weeklyReportImg} alt="주간 업무 보고" className="w-full h-auto" />
                 </Card>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Separator */}
+      <div className="h-2 bg-separator" />
+
+      {/* Section 5: 활동지원사 꿀팁 */}
+      <section id="section5" className="py-12 px-6 md:px-12 bg-muted">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <h2 className="text-center text-foreground mb-8 flex items-center justify-center gap-3">
+            <Lightbulb className="w-10 h-10 text-primary" />
+            활동지원사 꿀팁
+          </h2>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            {/* 부천시 공중 화장실 찾아보기 */}
+            <AccordionItem value="item-toilet" className="bg-card rounded-lg px-6 border-2">
+              <AccordionTrigger className="text-xl font-bold hover:text-primary">
+                <div className="flex items-center gap-2">
+                  <MapPinned className="w-6 h-6" />
+                  부천시 공중 화장실 찾아보기
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="text-lg leading-relaxed pt-4 space-y-4">
+                <p className="text-muted-foreground">
+                  공중화장실 지도입니다.<br />
+                  지도를 손가락으로 넓혀서 내 인근의 화장실을 찾아보세요
+                </p>
+                <Button
+                  size="lg"
+                  asChild
+                  className="w-full h-auto py-6 text-xl font-bold bg-primary hover:bg-primary/90"
+                >
+                  <a href="https://data.gg.go.kr/portal/data/service/selectServicePage.do?page=1&rows=10&sortColumn=&sortDirection=&infId=GW6U772M6045H11Q799612585601&infSeq=2&order=&loc=#none" target="_blank" rel="noopener noreferrer">
+                    🚻 공중화장실 지도 열기
+                  </a>
+                </Button>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* 장애인 이용자의 건강관리 */}
+            <AccordionItem value="item-health" className="bg-card rounded-lg px-6 border-2">
+              <AccordionTrigger className="text-xl font-bold hover:text-primary">
+                <div className="flex items-center gap-2">
+                  <Heart className="w-6 h-6" />
+                  장애인 이용자의 건강관리
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pt-4">
+                <div className="grid gap-3">
+                  <a href="https://youtu.be/y0PXvG2cjSk?feature=shared" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full h-auto py-4 text-lg font-bold justify-start">
+                      🍜 당뇨 관리중 라면 식사
+                    </Button>
+                  </a>
+                  <a href="https://youtu.be/dba6c5_PmTM?feature=shared" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full h-auto py-4 text-lg font-bold justify-start">
+                      🍚 당뇨 관리중 탄수화물 식사지원
+                    </Button>
+                  </a>
+                  <a href="https://youtu.be/pqGo3UgEGDY?feature=shared" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full h-auto py-4 text-lg font-bold justify-start">
+                      🥩 당뇨 관리중 육류 식사지원
+                    </Button>
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=yGOSBHOaRw0" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full h-auto py-4 text-lg font-bold justify-start">
+                      🍎 당뇨 관리중 과일 식사지원
+                    </Button>
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=fN73x0OG-b4" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full h-auto py-4 text-lg font-bold justify-start">
+                      🥛 당뇨 관리중 유제품 식사 지원
+                    </Button>
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=9QH_aoGbxyM" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full h-auto py-4 text-lg font-bold justify-start">
+                      🍪 당뇨 관리중 간식 지원
+                    </Button>
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=B0rSzf6H4y4" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full h-auto py-4 text-lg font-bold justify-start">
+                      🍞 당뇨 관리중 빵 지원
+                    </Button>
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=JziIKmwOhho" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full h-auto py-4 text-lg font-bold justify-start">
+                      🔢 당뇨 관리중 탄수화물 계산
+                    </Button>
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=Ai1xBUyaAts" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full h-auto py-4 text-lg font-bold justify-start">
+                      💊 당뇨와 신장장애 관리하기
+                    </Button>
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=DJOlEkJDkOw" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full h-auto py-4 text-lg font-bold justify-start">
+                      🧂 신장장애 나트륨 관리하기
+                    </Button>
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=9-fXcvM6NZU" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full h-auto py-4 text-lg font-bold justify-start">
+                      📋 신장장애 식단 수칙
+                    </Button>
+                  </a>
+                  <a href="https://www.youtube.com/shorts/uTO8QnQO_1c" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full h-auto py-4 text-lg font-bold justify-start">
+                      🥗 신장장애 채소 과일 지원하기
+                    </Button>
+                  </a>
+                </div>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
