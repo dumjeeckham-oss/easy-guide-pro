@@ -41,18 +41,27 @@ const Index = () => {
                 <Phone className="w-12 h-12" />
                 <div className="text-left">
                   <p className="text-2xl font-bold">문의사항</p>
-                  <p className="text-3xl font-bold mt-2">070-4127-1611</p>
+                  <p className="text-3xl font-bold mt-2">032-675-7517 (내선 2번)</p>
                 </div>
               </div>
             </Card>
           </a>
 
-          {/* Notice Banner */}
+          {/* Notice Banner with Preview */}
           <a href="https://feline-clarinet-1dd.notion.site/2c43f84ca160805ba164c94fb1642186?source=copy_link" target="_blank" rel="noopener noreferrer" className="block">
-            <Card className="bg-accent/10 border-2 border-accent p-6 hover:bg-accent/20 transition-colors cursor-pointer">
-              <p className="text-xl font-bold text-foreground">
-                📢 공지: 2025년 송년회 일정 12월 23일 오후 5:30 (클릭하여 자세히 보기)
-              </p>
+            <Card className="bg-accent/10 border-2 border-accent overflow-hidden hover:bg-accent/20 transition-colors cursor-pointer">
+              <div className="p-6">
+                <p className="text-xl font-bold text-foreground">
+                  📢 이번주의 공지사항 살펴보기 (클릭하여 자세히 보기)
+                </p>
+              </div>
+              <div className="h-48 overflow-hidden border-t border-accent/30">
+                <iframe 
+                  src="https://feline-clarinet-1dd.notion.site/2c43f84ca160805ba164c94fb1642186"
+                  className="w-full h-[400px] pointer-events-none"
+                  title="공지사항 미리보기"
+                />
+              </div>
             </Card>
           </a>
         </div>
