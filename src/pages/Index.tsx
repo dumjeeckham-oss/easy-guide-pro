@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FloatingNav } from "@/components/FloatingNav";
+import { InstallPrompt } from "@/components/InstallPrompt";
 import welfareStatusImg from "@/assets/welfare-status.png";
 import scheduleImg from "@/assets/schedule.png";
 import provisionRecordImg from "@/assets/provision-record.png";
@@ -65,6 +66,9 @@ const Index = () => {
               </div>
             </Card>
           </a>
+
+          {/* Install PWA Prompt */}
+          <InstallPrompt />
         </div>
       </section>
 
