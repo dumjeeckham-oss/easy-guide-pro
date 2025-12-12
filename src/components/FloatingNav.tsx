@@ -10,6 +10,7 @@ const sections = [
   { id: "section2", title: "기본 서류 안내" },
   { id: "section3", title: "특별 업무" },
   { id: "section4", title: "서식 참조" },
+  { id: "section5", title: "꿀팁" },
 ];
 
 export const FloatingNav = () => {
@@ -54,7 +55,7 @@ export const FloatingNav = () => {
             className="text-xs px-2 py-1 h-auto flex items-center gap-1"
           >
             <Smartphone className="w-3 h-3" />
-            홈에 추가
+            바탕화면 바로가기
           </Button>
         )}
       </div>
