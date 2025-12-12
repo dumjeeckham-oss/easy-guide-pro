@@ -21,7 +21,7 @@ const Index = () => {
       <FloatingNav />
 
       {/* Section 0: Hero Section */}
-      <section id="hero" className="bg-background py-12 px-6 md:px-12">
+      <section id="hero" className="bg-background pt-20 md:pt-16 pb-12 px-6 md:px-12">
         <div className="max-w-5xl mx-auto text-center space-y-8">
           {/* 동백센터 로고 */}
           <div className="flex justify-center mb-6">
