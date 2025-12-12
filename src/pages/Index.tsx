@@ -55,12 +55,13 @@ const Index = () => {
                   📢 이번주의 공지사항 살펴보기 (클릭하여 자세히 보기)
                 </p>
               </div>
-              <div className="h-48 overflow-hidden border-t border-accent/30">
-                <iframe 
-                  src="https://feline-clarinet-1dd.notion.site/2c43f84ca160805ba164c94fb1642186"
-                  className="w-full h-[400px] pointer-events-none"
-                  title="공지사항 미리보기"
-                />
+              <div className="relative h-32 overflow-hidden border-t border-accent/30 bg-card">
+                <div className="p-4 text-lg text-muted-foreground">
+                  <p className="font-bold text-foreground mb-2">📌 최신 공지사항</p>
+                  <p>공지사항 내용을 확인하시려면 이 영역을 클릭해주세요.</p>
+                  <p className="text-primary mt-2">👆 터치하여 노션 페이지로 이동</p>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-card to-transparent" />
               </div>
             </Card>
           </a>
