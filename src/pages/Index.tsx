@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FloatingNav } from "@/components/FloatingNav";
-import { InstallPrompt } from "@/components/InstallPrompt";
+
 import welfareStatusImg from "@/assets/welfare-status.png";
 import scheduleImg from "@/assets/schedule.png";
 import provisionRecordImg from "@/assets/provision-record.png";
@@ -21,7 +21,7 @@ const Index = () => {
       <FloatingNav />
 
       {/* Section 0: Hero Section */}
-      <section id="hero" className="bg-background pt-20 md:pt-16 pb-12 px-6 md:px-12">
+      <section id="hero" className="bg-background pt-28 md:pt-20 pb-12 px-6 md:px-12">
         <div className="max-w-5xl mx-auto text-center space-y-8">
           {/* 동백센터 로고 */}
           <div className="flex justify-center mb-6">
@@ -67,8 +67,6 @@ const Index = () => {
             </Card>
           </a>
 
-          {/* Install PWA Prompt */}
-          <InstallPrompt />
         </div>
       </section>
 
