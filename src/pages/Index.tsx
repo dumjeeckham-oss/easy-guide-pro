@@ -49,7 +49,7 @@ const Index = () => {
           </a>
 
           {/* Notice Banner with Preview */}
-          <a href="https://feline-clarinet-1dd.notion.site/2c43f84ca160805ba164c94fb1642186?source=copy_link" target="_blank" rel="noopener noreferrer" className="block">
+          <a href="https://feline-clarinet-1dd.notion.site/2c43f84ca160805ba164c94fb1642186?source=copy_link" className="block">
             <Card className="bg-accent/10 border-2 border-accent overflow-hidden hover:bg-accent/20 transition-colors cursor-pointer">
               <div className="p-6">
                 <p className="text-xl font-bold text-foreground">
@@ -275,17 +275,30 @@ const Index = () => {
                     부천시 원미로 97번길 31, 3층<br />(원미동)
                   </p>
                 </Card>
-                <a 
-                  href="https://map.kakao.com/link/to/동백장애인활동지원센터,37.4878548,126.7637826" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <Button className="w-full text-xl py-6 bg-[#FEE500] text-[#191919] hover:bg-[#FEE500]/90 font-bold">
-                    <MapPinned className="w-6 h-6 mr-2" />
-                    카카오맵으로 길찾기
-                  </Button>
-                </a>
+                <div className="flex flex-col gap-3">
+                  <a 
+                    href="https://map.kakao.com/link/to/동백장애인활동지원센터,37.4878548,126.7637826" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Button className="w-full text-xl py-6 bg-[#FEE500] text-[#191919] hover:bg-[#FEE500]/90 font-bold">
+                      <MapPinned className="w-6 h-6 mr-2" />
+                      카카오맵으로 길찾기
+                    </Button>
+                  </a>
+                  <a 
+                    href="https://map.naver.com/p/directions/-/14127653.6888655,4509066.4962254,동백장애인활동지원센터,1018641808,PLACE_POI/-/transit?c=15.00,0,0,0,dh" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Button className="w-full text-xl py-6 bg-[#03C75A] text-white hover:bg-[#03C75A]/90 font-bold">
+                      <MapPinned className="w-6 h-6 mr-2" />
+                      네이버맵으로 길찾기
+                    </Button>
+                  </a>
+                </div>
               </AccordionContent>
             </AccordionItem>
 
