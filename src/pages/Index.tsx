@@ -277,7 +277,7 @@ const Index = () => {
                 </Card>
                 <div className="flex flex-col gap-3">
                   <a 
-                    href="https://map.kakao.com/link/to/동백장애인활동지원센터,37.4878548,126.7637826" 
+                    href="https://map.kakao.com/link/search/경기도 부천시 원미로 97번길 31" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="block"
@@ -288,7 +288,7 @@ const Index = () => {
                     </Button>
                   </a>
                   <a 
-                    href="https://map.naver.com/p/directions/-/14127653.6888655,4509066.4962254,동백장애인활동지원센터,1018641808,PLACE_POI/-/transit?c=15.00,0,0,0,dh" 
+                    href="https://map.naver.com/p/search/경기도 부천시 원미로 97번길 31" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="block"
