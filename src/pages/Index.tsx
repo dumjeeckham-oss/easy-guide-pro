@@ -527,6 +527,9 @@ const Index = () => {
         <p className="text-2xl font-bold mt-4">
           📞 032-675-7517 (내선 2번)
         </p>
+        <p className="text-xl mt-3">
+          ✉️ dong100center@naver.com
+        </p>
         <p className="text-lg mt-4">
           부천의료복지사회적협동조합 동백 장애인활동지원센터
         </p>
