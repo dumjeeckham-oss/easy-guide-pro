@@ -263,12 +263,12 @@ const Index = () => {
 
             {/* 동백 사무실 주소 */}
             <AccordionItem value="item-4" className="bg-card rounded-lg px-6 border-2">
-              <AccordionTrigger className="text-xl font-bold hover:text-primary">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-6 h-6" />
-                  동백 사무실 주소
-                </div>
-              </AccordionTrigger>
+            <AccordionTrigger className="text-xl font-bold hover:text-primary">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-6 h-6" />
+                동백 사무실 주소 (찾아오는 방법)
+              </div>
+            </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed pt-4 space-y-4">
                 <Card className="bg-primary/10 p-6">
                   <p className="text-2xl font-bold text-center">
@@ -326,10 +326,13 @@ const Index = () => {
       {/* Section 3: Special Tasks */}
       <section id="section3" className="py-12 px-6 md:px-12 bg-muted">
         <div className="max-w-5xl mx-auto space-y-8">
-          <h2 className="text-center text-foreground mb-8 flex items-center justify-center gap-3">
+          <h2 className="text-center text-foreground mb-4 flex items-center justify-center gap-3">
             <ShoppingCart className="w-10 h-10 text-primary" />
             비대면 서비스제공 보고
           </h2>
+          <p className="text-center text-lg text-muted-foreground mb-8">
+            이용자의 거동이 어려워 활동지원사가 이용자의 요청으로 잠시 이용자와 떨어져야 할 경우에는 반드시 사전에 아래 보고서를 작성하셔야 합니다.
+          </p>
 
           <div className="flex justify-center">
             <Button
