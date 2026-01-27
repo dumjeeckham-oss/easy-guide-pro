@@ -328,29 +328,18 @@ const Index = () => {
         <div className="max-w-5xl mx-auto space-y-8">
           <h2 className="text-center text-foreground mb-8 flex items-center justify-center gap-3">
             <ShoppingCart className="w-10 h-10 text-primary" />
-            비대면 서비스제공 보고 및 활동지원사 구인/구직 신청
+            비대면 서비스제공 보고
           </h2>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="flex justify-center">
             <Button
               size="lg"
               asChild
-              className="h-auto py-8 text-xl font-bold flex flex-col gap-3 bg-primary hover:bg-primary/90"
+              className="h-auto py-8 px-12 text-xl font-bold flex flex-col gap-3 bg-primary hover:bg-primary/90"
             >
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBFbqYVJ6CDtMLfeAoLQKRbaMKtQu6ZY7Zk3UZhvRBN6ptLg/viewform?pli=1" target="_blank" rel="noopener noreferrer">
                 <ShoppingCart className="w-10 h-10" />
                 장보기 업무 보고서 작성하기
-              </a>
-            </Button>
-
-            <Button
-              size="lg"
-              asChild
-              className="h-auto py-8 text-xl font-bold flex flex-col gap-3 bg-primary hover:bg-primary/90"
-            >
-              <a href="https://bcmedcoop.org/bbs/board.php?bo_table=support5" target="_blank" rel="noopener noreferrer">
-                <Users className="w-10 h-10" />
-                활동지원사 구직 신청하기
               </a>
             </Button>
           </div>
@@ -516,6 +505,28 @@ const Index = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+      </section>
+
+      {/* 조합원 가입 섹션 */}
+      <section className="py-12 px-6 md:px-12 bg-background">
+        <div className="max-w-5xl mx-auto text-center space-y-6">
+          <h2 className="text-foreground mb-4 flex items-center justify-center gap-3">
+            <Users className="w-10 h-10 text-primary" />
+            조합원 가입 안내
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            부천의료복지사회적협동조합의 조합원이 되어 함께해주세요!
+          </p>
+          <Button
+            size="lg"
+            asChild
+            className="h-auto py-6 px-12 text-xl font-bold bg-accent hover:bg-accent/90 text-accent-foreground"
+          >
+            <a href="https://bcmedcoop.limefriends.com/bbs/write.php?bo_table=join_coop&join_md=coop" target="_blank" rel="noopener noreferrer">
+              🤝 조합원 가입하기
+            </a>
+          </Button>
         </div>
       </section>
 
