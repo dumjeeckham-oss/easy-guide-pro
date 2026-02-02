@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Smartphone } from "lucide-react";
+import { Smartphone, RefreshCw } from "lucide-react";
 import { usePWAInstall } from "@/hooks/usePWAInstall";
 import { useState } from "react";
 
@@ -32,6 +32,10 @@ export const FloatingNav = () => {
     }
   };
 
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   return (
     <Card className="fixed top-2 right-2 md:top-4 md:right-4 w-auto p-2 shadow-lg z-50 bg-card/95 backdrop-blur-sm max-w-[280px]">
       <h3 className="text-sm font-bold mb-1 text-foreground px-2">빠른 이동</h3>
@@ -47,6 +51,15 @@ export const FloatingNav = () => {
             {section.title}
           </Button>
         ))}
+        <Button
+          onClick={handleRefresh}
+          variant="outline"
+          size="sm"
+          className="text-xs px-2 py-1 h-auto flex items-center gap-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+        >
+          <RefreshCw className="w-3 h-3" />
+          새 버전 업데이트
+        </Button>
         {isInstallable && (
           <Button
             onClick={handleInstallClick}
