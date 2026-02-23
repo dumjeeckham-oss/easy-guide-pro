@@ -541,6 +541,11 @@ const Index = () => {
         <p className="text-2xl font-bold mt-4">
           📞 032-675-7517 (내선 2번)
         </p>
+        <div className="mt-4 space-y-1 text-lg">
+          <p>동백1: <a href="tel:010-3423-7517" className="underline">010-3423-7517</a></p>
+          <p>동백2: <a href="tel:010-9092-7517" className="underline">010-9092-7517</a></p>
+          <p>동백3: <a href="tel:010-6670-7517" className="underline">010-6670-7517</a></p>
+        </div>
         <p className="text-xl mt-3">
           ✉️ dong100center@naver.com
         </p>
