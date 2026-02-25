@@ -507,6 +507,97 @@ const Index = () => {
                 </div>
               </AccordionContent>
             </AccordionItem>
+            {/* 장애유형별 활동지원 제공방법 */}
+            <AccordionItem value="item-disability-types" className="bg-card rounded-lg px-6 border-2">
+              <AccordionTrigger className="text-xl font-bold hover:text-primary">
+                <div className="flex items-center gap-2">
+                  📖 장애유형별 활동지원 제공방법
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pt-4">
+                <Accordion type="single" collapsible className="space-y-3">
+                  <AccordionItem value="disability-1" className="bg-muted rounded-lg px-4 border">
+                    <AccordionTrigger className="text-lg font-bold hover:text-primary">
+                      발달장애(지적, 자폐) 이해와 지원
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4">
+                      <div className="aspect-[4/3] w-full">
+                        <iframe
+                          src="https://www.canva.com/design/DAHCScYtDxM/VX1YGIG_vFauEnr8DG4OcQ/view?embed"
+                          className="w-full h-full rounded-lg border-0"
+                          title="발달장애(지적, 자폐) 이해와 지원"
+                          allowFullScreen
+                        />
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="disability-2" className="bg-muted rounded-lg px-4 border">
+                    <AccordionTrigger className="text-lg font-bold hover:text-primary">
+                      정신장애 이해와 지원
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4">
+                      <p className="text-muted-foreground">준비 중입니다.</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="disability-3" className="bg-muted rounded-lg px-4 border">
+                    <AccordionTrigger className="text-lg font-bold hover:text-primary">
+                      지체장애 이해와 지원
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4">
+                      <p className="text-muted-foreground">준비 중입니다.</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="disability-4" className="bg-muted rounded-lg px-4 border">
+                    <AccordionTrigger className="text-lg font-bold hover:text-primary">
+                      뇌병변장애 이해와 지원
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4">
+                      <p className="text-muted-foreground">준비 중입니다.</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="disability-5" className="bg-muted rounded-lg px-4 border">
+                    <AccordionTrigger className="text-lg font-bold hover:text-primary">
+                      시각장애 이해와 지원
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4">
+                      <p className="text-muted-foreground">준비 중입니다.</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="disability-6" className="bg-muted rounded-lg px-4 border">
+                    <AccordionTrigger className="text-lg font-bold hover:text-primary">
+                      청각장애 이해와 지원
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4">
+                      <p className="text-muted-foreground">준비 중입니다.</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="disability-7" className="bg-muted rounded-lg px-4 border">
+                    <AccordionTrigger className="text-lg font-bold hover:text-primary">
+                      신장장애 이해와 지원
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4">
+                      <p className="text-muted-foreground">준비 중입니다.</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="disability-8" className="bg-muted rounded-lg px-4 border">
+                    <AccordionTrigger className="text-lg font-bold hover:text-primary">
+                      호흡기장애 이해와 지원
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4">
+                      <p className="text-muted-foreground">준비 중입니다.</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="disability-9" className="bg-muted rounded-lg px-4 border">
+                    <AccordionTrigger className="text-lg font-bold hover:text-primary">
+                      뇌전증장애 이해와 지원
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4">
+                      <p className="text-muted-foreground">준비 중입니다.</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </AccordionContent>
+            </AccordionItem>
           </Accordion>
         </div>
       </section>
