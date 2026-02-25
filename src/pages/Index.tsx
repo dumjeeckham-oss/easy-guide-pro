@@ -581,7 +581,9 @@ const Index = () => {
                       시각장애 이해와 지원
                     </AccordionTrigger>
                     <AccordionContent className="pt-4">
-                      <p className="text-muted-foreground">준비 중입니다.</p>
+                      <div className="aspect-[4/3] w-full">
+                        <iframe src="https://www.canva.com/design/DAHCTtEKMxc/tNusgKeBUjYOl-PeY9YMFA/view?embed" className="w-full h-full rounded-lg border-0" title="시각장애 이해와 지원" allowFullScreen />
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="disability-6" className="bg-muted rounded-lg px-4 border">
@@ -589,7 +591,9 @@ const Index = () => {
                       청각장애 이해와 지원
                     </AccordionTrigger>
                     <AccordionContent className="pt-4">
-                      <p className="text-muted-foreground">준비 중입니다.</p>
+                      <div className="aspect-[4/3] w-full">
+                        <iframe src="https://www.canva.com/design/DAHCT4yYysQ/UPPXjDrkPGcFsn_3_qPE1w/view?embed" className="w-full h-full rounded-lg border-0" title="청각장애 이해와 지원" allowFullScreen />
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="disability-7" className="bg-muted rounded-lg px-4 border">
@@ -597,7 +601,9 @@ const Index = () => {
                       신장장애 이해와 지원
                     </AccordionTrigger>
                     <AccordionContent className="pt-4">
-                      <p className="text-muted-foreground">준비 중입니다.</p>
+                      <div className="aspect-[4/3] w-full">
+                        <iframe src="https://www.canva.com/design/DAHCTxcZ3wI/o-WLzH2cNsHfJRuPH495pg/view?embed" className="w-full h-full rounded-lg border-0" title="신장장애 이해와 지원" allowFullScreen />
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="disability-8" className="bg-muted rounded-lg px-4 border">
@@ -605,7 +611,9 @@ const Index = () => {
                       호흡기장애 이해와 지원
                     </AccordionTrigger>
                     <AccordionContent className="pt-4">
-                      <p className="text-muted-foreground">준비 중입니다.</p>
+                      <div className="aspect-[4/3] w-full">
+                        <iframe src="https://www.canva.com/design/DAHCT-8SzjY/Qqk48igABy-wqQRUFta1qA/view?embed" className="w-full h-full rounded-lg border-0" title="호흡기장애 이해와 지원" allowFullScreen />
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="disability-9" className="bg-muted rounded-lg px-4 border">
@@ -613,7 +621,9 @@ const Index = () => {
                       뇌전증장애 이해와 지원
                     </AccordionTrigger>
                     <AccordionContent className="pt-4">
-                      <p className="text-muted-foreground">준비 중입니다.</p>
+                      <div className="aspect-[4/3] w-full">
+                        <iframe src="https://www.canva.com/design/DAHCT9foqOc/6SvtS33h-K5hUDtMWxzpDg/view?embed" className="w-full h-full rounded-lg border-0" title="뇌전증장애 이해와 지원" allowFullScreen />
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
