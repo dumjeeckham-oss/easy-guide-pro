@@ -536,7 +536,14 @@ const Index = () => {
                       정신장애 이해와 지원
                     </AccordionTrigger>
                     <AccordionContent className="pt-4">
-                      <p className="text-muted-foreground">준비 중입니다.</p>
+                      <div className="aspect-[4/3] w-full">
+                        <iframe
+                          src="https://www.canva.com/design/DAHCScYtDxM/VX1YGIG_vFauEnr8DG4OcQ/view?embed"
+                          className="w-full h-full rounded-lg border-0"
+                          title="정신장애 이해와 지원"
+                          allowFullScreen
+                        />
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="disability-3" className="bg-muted rounded-lg px-4 border">
@@ -544,7 +551,14 @@ const Index = () => {
                       지체장애 이해와 지원
                     </AccordionTrigger>
                     <AccordionContent className="pt-4">
-                      <p className="text-muted-foreground">준비 중입니다.</p>
+                      <div className="aspect-[4/3] w-full">
+                        <iframe
+                          src="https://www.canva.com/design/DAHCSpy8fIY/PtWiFFWNNk8LRIRwTW8VBg/view?embed"
+                          className="w-full h-full rounded-lg border-0"
+                          title="지체장애 이해와 지원"
+                          allowFullScreen
+                        />
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="disability-4" className="bg-muted rounded-lg px-4 border">
@@ -552,7 +566,14 @@ const Index = () => {
                       뇌병변장애 이해와 지원
                     </AccordionTrigger>
                     <AccordionContent className="pt-4">
-                      <p className="text-muted-foreground">준비 중입니다.</p>
+                      <div className="aspect-[4/3] w-full">
+                        <iframe
+                          src="https://www.canva.com/design/DAHCSj6jzOw/QpXG-5YXbAhlUDX2pTopmQ/view?embed"
+                          className="w-full h-full rounded-lg border-0"
+                          title="뇌병변장애 이해와 지원"
+                          allowFullScreen
+                        />
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="disability-5" className="bg-muted rounded-lg px-4 border">
@@ -633,9 +654,9 @@ const Index = () => {
           📞 032-675-7517 (내선 2번)
         </p>
         <div className="mt-4 space-y-1 text-lg">
-          <p>동백1: <a href="tel:010-3423-7517" className="underline">010-3423-7517</a></p>
-          <p>동백2: <a href="tel:010-9092-7517" className="underline">010-9092-7517</a></p>
-          <p>동백3: <a href="tel:010-6670-7517" className="underline">010-6670-7517</a></p>
+          <p>업무폰1 김세미: <a href="tel:010-3423-7517" className="underline">010-3423-7517</a></p>
+          <p>업무폰2 최혜양: <a href="tel:010-9092-7517" className="underline">010-9092-7517</a></p>
+          <p>업무폰3 조미경: <a href="tel:010-6670-7517" className="underline">010-6670-7517</a></p>
         </div>
         <p className="text-xl mt-3">
           ✉️ dong100center@naver.com
