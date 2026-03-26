@@ -257,7 +257,12 @@ const Index = () => {
                   <li>장애인활동지원 이수증 사본 1부</li>
                   <li>경력증명서/재직증명서/실습일지 중 1부</li>
                   <li>장애인의 경우 장애인증명서 1부</li>
-                  <li>피성년후견인, 피한정후견인 부존재 증명서  1부</li>
+                   <li>피성년후견인, 피한정후견인 부존재 증명서  1부
+                     <br />
+                     <a href="https://egdrs.scourt.go.kr/" target="_blank" rel="noopener noreferrer" className="text-primary underline text-sm">
+                       👉 인터넷 발급 바로가기 (대법원)
+                     </a>
+                   </li>
                   <li>피부양자 등록 원할 시: 피부양자대상자기준 가족관계증명서상세본</li>
                 </ul>
               </AccordionContent>
