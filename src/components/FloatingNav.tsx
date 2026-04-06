@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Smartphone, RefreshCw } from "lucide-react";
+import { Smartphone, RefreshCw, Type } from "lucide-react";
 import { usePWAInstall } from "@/hooks/usePWAInstall";
+import { useFontSize } from "@/hooks/useFontSize";
 import { useState } from "react";
 
 const sections = [
