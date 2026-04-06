@@ -16,7 +16,17 @@ const sections = [
 
 export const FloatingNav = () => {
   const { isInstallable, isIOS, installApp } = usePWAInstall();
+  const { fontSize, setFontSize } = useFontSize();
   const [showIOSGuide, setShowIOSGuide] = useState(false);
+
+  const fontSizeLabels = { small: "작게", medium: "보통", large: "크게" } as const;
+  const fontSizeOrder: Array<"small" | "medium" | "large"> = ["small", "medium", "large"];
+
+  const cycleFontSize = () => {
+    const currentIndex = fontSizeOrder.indexOf(fontSize);
+    const nextIndex = (currentIndex + 1) % fontSizeOrder.length;
+    setFontSize(fontSizeOrder[nextIndex]);
+  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
