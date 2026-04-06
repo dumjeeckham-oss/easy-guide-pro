@@ -60,7 +60,15 @@ export const FloatingNav = () => {
             className="text-xs px-2 py-1 h-auto hover:bg-primary/10 hover:text-primary"
           >
             {section.title}
-          </Button>
+        </Button>
+        <Button
+          onClick={cycleFontSize}
+          variant="outline"
+          size="sm"
+          className="text-xs px-2 py-1 h-auto flex items-center gap-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+        >
+          <Type className="w-3 h-3" />
+          {fontSizeLabels[fontSize]}보기
         ))}
         <Button
           onClick={handleRefresh}
