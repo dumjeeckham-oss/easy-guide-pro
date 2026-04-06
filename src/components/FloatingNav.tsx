@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Smartphone, RefreshCw } from "lucide-react";
+import { Smartphone, RefreshCw, Type } from "lucide-react";
 import { usePWAInstall } from "@/hooks/usePWAInstall";
+import { useFontSize } from "@/hooks/useFontSize";
 import { useState } from "react";
 
 const sections = [
@@ -15,7 +16,17 @@ const sections = [
 
 export const FloatingNav = () => {
   const { isInstallable, isIOS, installApp } = usePWAInstall();
+  const { fontSize, setFontSize } = useFontSize();
   const [showIOSGuide, setShowIOSGuide] = useState(false);
+
+  const fontSizeLabels = { small: "작게", medium: "보통", large: "크게" } as const;
+  const fontSizeOrder: Array<"small" | "medium" | "large"> = ["small", "medium", "large"];
+
+  const cycleFontSize = () => {
+    const currentIndex = fontSizeOrder.indexOf(fontSize);
+    const nextIndex = (currentIndex + 1) % fontSizeOrder.length;
+    setFontSize(fontSizeOrder[nextIndex]);
+  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -51,6 +62,15 @@ export const FloatingNav = () => {
             {section.title}
           </Button>
         ))}
+        <Button
+          onClick={cycleFontSize}
+          variant="outline"
+          size="sm"
+          className="text-xs px-2 py-1 h-auto flex items-center gap-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+        >
+          <Type className="w-3 h-3" />
+          {fontSizeLabels[fontSize]}보기
+        </Button>
         <Button
           onClick={handleRefresh}
           variant="outline"
