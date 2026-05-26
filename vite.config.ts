@@ -3,9 +3,13 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { VitePWA } from "vite-plugin-pwa";
 
+const GITHUB_PAGES_BASE = "/easy-guide-pro/";
+const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
+const appBase = isGitHubActions ? GITHUB_PAGES_BASE : "/";
+
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  base: "/easy-guide-pro/",
+export default defineConfig(() => ({
+  base: appBase,
   server: {
     host: "::",
     port: 8080,
@@ -23,7 +27,7 @@ export default defineConfig(({ mode }) => ({
         background_color: "#ffffff",
         display: "standalone",
         orientation: "portrait",
-        start_url: "/easy-guide-pro/",
+        start_url: appBase,
         icons: [
           {
             src: "pwa-192x192.png",
