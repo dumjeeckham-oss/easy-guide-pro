@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Smartphone, RefreshCw, Type } from "lucide-react";
 import { usePWAInstall } from "@/hooks/usePWAInstall";
 import { useFontSize } from "@/hooks/useFontSize";
 import { useState } from "react";
+import dongbaekLogo from "@/assets/dongbaek-logo.png";
 
 const sections = [
   { id: "hero", title: "홈" },
@@ -29,9 +29,22 @@ export const FloatingNav = () => {
   };
 
   const scrollToSection = (sectionId: string) => {
+    if (sectionId === "hero") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      // 135px offset for the fixed header
+      const headerOffset = 135;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -47,59 +60,92 @@ export const FloatingNav = () => {
     window.location.reload();
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <Card className="fixed top-2 right-2 md:top-4 md:right-4 w-auto p-2 shadow-lg z-50 bg-card/95 backdrop-blur-sm max-w-[280px]">
-      <h3 className="text-sm font-bold mb-1 text-foreground px-2">빠른 이동</h3>
-      <div className="flex flex-wrap gap-1">
-        {sections.map((section) => (
-          <Button
-            key={section.id}
-            onClick={() => scrollToSection(section.id)}
-            variant="ghost"
-            size="sm"
-            className="text-xs px-2 py-1 h-auto hover:bg-primary/10 hover:text-primary"
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
+      <div className="max-w-5xl mx-auto px-4 py-3 flex flex-col items-center gap-3">
+        {/* Top row: Logo and Utilities */}
+        <div className="w-full flex items-center justify-between gap-4">
+          {/* Clickable Logo */}
+          <button 
+            onClick={scrollToTop} 
+            className="flex items-center gap-2 hover:opacity-85 transition-opacity focus:outline-none"
+            aria-label="홈으로 스크롤"
           >
-            {section.title}
-          </Button>
-        ))}
-        <Button
-          onClick={cycleFontSize}
-          variant="outline"
-          size="sm"
-          className="text-xs px-2 py-1 h-auto flex items-center gap-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-        >
-          <Type className="w-3 h-3" />
-          {fontSizeLabels[fontSize]}보기
-        </Button>
-        <Button
-          onClick={handleRefresh}
-          variant="outline"
-          size="sm"
-          className="text-xs px-2 py-1 h-auto flex items-center gap-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-        >
-          <RefreshCw className="w-3 h-3" />
-          새 버전 업데이트
-        </Button>
-        {isInstallable && (
-          <Button
-            onClick={handleInstallClick}
-            variant="default"
-            size="sm"
-            className="text-xs px-2 py-1 h-auto flex items-center gap-1"
-          >
-            <Smartphone className="w-3 h-3" />
-            바탕화면 바로가기
-          </Button>
+            <img 
+              src={dongbaekLogo} 
+              alt="동백 장애인활동지원센터 로고" 
+              className="h-10 md:h-12 w-auto object-contain" 
+            />
+          </button>
+
+          {/* Quick utility actions */}
+          <div className="flex items-center gap-1.5">
+            <Button
+              onClick={cycleFontSize}
+              variant="outline"
+              size="sm"
+              className="text-xs px-2 py-1 h-8 flex items-center gap-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold"
+            >
+              <Type className="w-3.5 h-3.5" />
+              <span>{fontSizeLabels[fontSize]}보기</span>
+            </Button>
+            
+            <Button
+              onClick={handleRefresh}
+              variant="outline"
+              size="sm"
+              className="text-xs px-2 py-1 h-8 flex items-center gap-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold"
+            >
+              <RefreshCw className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">새 버전 업데이트</span>
+              <span className="sm:hidden">업데이트</span>
+            </Button>
+
+            {isInstallable && (
+              <Button
+                onClick={handleInstallClick}
+                variant="default"
+                size="sm"
+                className="text-xs px-2 py-1 h-8 flex items-center gap-1 bg-primary text-primary-foreground hover:bg-primary/90 font-bold"
+              >
+                <Smartphone className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">바로가기 추가</span>
+                <span className="sm:hidden">설치</span>
+              </Button>
+            )}
+          </div>
+        </div>
+
+        {/* Bottom row: Quick Nav Menu */}
+        <div className="w-full border-t border-border/60 pt-2">
+          <div className="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar gap-1.5 pb-1">
+            {sections.map((section) => (
+              <Button
+                key={section.id}
+                onClick={() => scrollToSection(section.id)}
+                variant="ghost"
+                size="sm"
+                className="text-sm font-extrabold px-3 py-1.5 h-auto whitespace-nowrap text-foreground/80 hover:bg-primary/10 hover:text-primary focus:bg-primary/10 transition-colors"
+              >
+                {section.title}
+              </Button>
+            ))}
+          </div>
+        </div>
+        
+        {showIOSGuide && isIOS && (
+          <div className="w-full mt-1 p-2 bg-primary/10 rounded text-xs space-y-1 text-left">
+            <p className="font-bold">iPhone 설치 방법:</p>
+            <p>1. 하단 공유 버튼 (□↑) 터치</p>
+            <p>2. "홈 화면에 추가" 선택</p>
+            <p>3. "추가" 버튼 터치</p>
+          </div>
         )}
       </div>
-      {showIOSGuide && isIOS && (
-        <div className="mt-2 p-2 bg-primary/10 rounded text-xs space-y-1">
-          <p className="font-bold">iPhone 설치 방법:</p>
-          <p>1. 하단 공유 버튼 (□↑) 터치</p>
-          <p>2. "홈 화면에 추가" 선택</p>
-          <p>3. "추가" 버튼 터치</p>
-        </div>
-      )}
-    </Card>
+    </header>
   );
 };

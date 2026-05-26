@@ -22,7 +22,7 @@ const Index = () => {
       <FloatingNav />
 
       {/* Section 0: Hero Section */}
-      <section id="hero" className="bg-background pt-28 md:pt-20 pb-12 px-6 md:px-12">
+      <section id="hero" className="bg-background pt-36 md:pt-40 pb-12 px-6 md:px-12">
         <div className="max-w-5xl mx-auto text-center space-y-8">
           {/* 동백센터 로고 */}
           <div className="flex justify-center mb-6">
@@ -64,6 +64,22 @@ const Index = () => {
                   <p className="text-primary mt-2">👆 터치하여 노션 페이지로 이동</p>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-card to-transparent" />
+              </div>
+            </Card>
+          </a>
+
+          {/* 동백 홈페이지 바로가기 */}
+          <a href="https://dong100.org" target="_blank" rel="noopener noreferrer" className="block">
+            <Card className="bg-primary/10 border-2 border-primary/20 p-6 hover:bg-primary/20 transition-colors cursor-pointer rounded-lg shadow-sm">
+              <div className="flex items-center justify-between gap-4 flex-wrap">
+                <div className="flex items-center gap-3">
+                  <span className="text-3xl">🌐</span>
+                  <div className="text-left">
+                    <p className="text-xl font-extrabold text-foreground">동백 홈페이지 바로가기</p>
+                    <p className="text-sm text-muted-foreground font-semibold">dong100.org</p>
+                  </div>
+                </div>
+                <span className="text-primary font-extrabold text-lg flex items-center gap-1">바로가기 ➔</span>
               </div>
             </Card>
           </a>
@@ -362,10 +378,23 @@ const Index = () => {
       {/* Section 4: Forms */}
       <section id="section4" className="py-12 px-6 md:px-12 bg-background">
         <div className="max-w-5xl mx-auto space-y-8">
-          <h2 className="text-center text-foreground mb-8 flex items-center justify-center gap-3">
+          <h2 className="text-center text-foreground mb-4 flex items-center justify-center gap-3">
             <FileText className="w-10 h-10 text-primary" />
             업무 서식 참조
           </h2>
+
+          <div className="flex justify-center mb-6">
+            <Button
+              size="lg"
+              asChild
+              className="h-auto py-5 px-10 text-xl font-extrabold flex items-center gap-3 bg-primary hover:bg-primary/90 shadow-md rounded-lg"
+            >
+              <a href="https://dong100.org/archive" target="_blank" rel="noopener noreferrer">
+                <FileText className="w-6 h-6" />
+                📥 서식 다운받기 (동백 홈페이지)
+              </a>
+            </Button>
+          </div>
 
           <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem value="item-7" className="bg-card rounded-lg px-6 border-2">
@@ -621,6 +650,42 @@ const Index = () => {
               🤝 조합원 가입하기
             </a>
           </Button>
+        </div>
+      </section>
+
+      {/* Separator */}
+      <div className="h-2 bg-separator" />
+
+      {/* 동백 소통채널 섹션 */}
+      <section className="py-12 px-6 md:px-12 bg-muted">
+        <div className="max-w-5xl mx-auto text-center space-y-6">
+          <h2 className="text-foreground mb-4 flex items-center justify-center gap-3 font-bold">
+            <span className="text-3xl">💬</span>
+            동백 소통채널
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            카카오톡 채널을 통해 동백과 더 빠르게 소통할 수 있습니다.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+            <Button
+              size="lg"
+              asChild
+              className="w-full h-auto py-5 px-6 text-xl font-extrabold bg-[#FEE500] text-[#191919] hover:bg-[#FEE500]/85 border-none shadow-sm rounded-lg"
+            >
+              <a href="http://pf.kakao.com/_ppVdb" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                💛 카카오톡 채널 추가
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              asChild
+              className="w-full h-auto py-5 px-6 text-xl font-extrabold bg-[#FEE500] text-[#191919] hover:bg-[#FEE500]/85 border-none shadow-sm rounded-lg"
+            >
+              <a href="http://pf.kakao.com/_ppVdb/chat" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                💬 카카오톡 1:1 채팅
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
