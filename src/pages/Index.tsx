@@ -705,6 +705,9 @@ const Index = () => {
         <p className="text-xl mt-3">
           ✉️ dong100center@naver.com
         </p>
+        <p className="text-xl mt-2">
+          팩스 : 032-675-7518
+        </p>
         <p className="text-lg mt-4">
           부천의료복지사회적협동조합 동백 장애인활동지원센터
         </p>
