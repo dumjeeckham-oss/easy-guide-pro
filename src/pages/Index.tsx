@@ -50,7 +50,12 @@ const Index = () => {
           </a>
 
           {/* Notice Banner with Preview */}
-          <a href="https://feline-clarinet-1dd.notion.site/2c43f84ca160805ba164c94fb1642186?source=copy_link" className="block">
+          <a
+            href="https://feline-clarinet-1dd.notion.site/2c43f84ca160805ba164c94fb1642186"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
             <Card className="bg-accent/10 border-2 border-accent overflow-hidden hover:bg-accent/20 transition-colors cursor-pointer">
               <div className="p-6">
                 <p className="text-xl font-bold text-foreground">
@@ -60,8 +65,8 @@ const Index = () => {
               <div className="relative h-32 overflow-hidden border-t border-accent/30 bg-card">
                 <div className="p-4 text-lg text-muted-foreground">
                   <p className="font-bold text-foreground mb-2">📌 최신 공지사항</p>
-                  <p>공지사항 내용을 확인하시려면 이 영역을 클릭해주세요.</p>
-                  <p className="text-primary mt-2">👆 터치하여 노션 페이지로 이동</p>
+                  <p>공지사항 내용을 확인하시려면 이 영역을 눌러주세요.</p>
+                  <p className="text-primary mt-2">👆 새 창에서 열립니다 (더 빠르고 안정적)</p>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-card to-transparent" />
               </div>
