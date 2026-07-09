@@ -15,16 +15,6 @@ export default defineConfig(() => ({
   },
   plugins: [
     react(),
-    VitePWA({ registerType: "autoUpdate" }) // 기존 플러그인 설정을 유지하기 위해 추가
-  ],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-}));
-  plugins: [
-    react(),
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "robots.txt"],
@@ -57,7 +47,7 @@ export default defineConfig(() => ({
         ],
       },
     }),
-  ].filter(Boolean),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
