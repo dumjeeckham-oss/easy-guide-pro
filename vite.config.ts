@@ -3,9 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { VitePWA } from "vite-plugin-pwa";
 
-const GITHUB_PAGES_BASE = "/easy-guide-pro/";
-const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
-const appBase = isGitHubActions ? GITHUB_PAGES_BASE : "/";
+// 서브도메인(support.dong100.org)은 루트(/) 경로를 사용하므로 base를 "/"로 설정합니다.
+const appBase = "/"; 
 
 // https://vitejs.dev/config/
 export default defineConfig(() => ({
@@ -14,6 +13,16 @@ export default defineConfig(() => ({
     host: "::",
     port: 8080,
   },
+  plugins: [
+    react(),
+    VitePWA({ registerType: "autoUpdate" }) // 기존 플러그인 설정을 유지하기 위해 추가
+  ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+}));
   plugins: [
     react(),
     VitePWA({
