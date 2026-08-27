@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FloatingNav } from "@/components/FloatingNav";
+import { CmsText } from "@/components/CmsText";
 
 import welfareStatusImg from "@/assets/welfare-status.png";
 import scheduleImg from "@/assets/schedule.png";
@@ -29,12 +30,8 @@ const Index = () => {
             <img src={dongbaekLogo} alt="동백 장애인활동지원센터 로고" className="h-24 md:h-32 w-auto" />
           </div>
 
-          <h1 className="text-foreground leading-tight text-4xl md:text-5xl font-bold">
-            활동지원사님의<br />든든한 파트너
-          </h1>
-          <h2 className="text-foreground font-bold leading-tight text-2xl md:text-3xl">
-            지금 당장 필요한 정보만<br />알려드립니다.
-          </h2>
+          <CmsText contentKey="heroTitle" as="h1" className="leading-tight" />
+          <CmsText contentKey="heroSubtitle" as="h2" className="leading-tight" />
 
           {/* Emergency Contact */}
           <a href="tel:070-4127-1611" className="block">
@@ -58,9 +55,7 @@ const Index = () => {
           >
             <Card className="bg-accent/10 border-2 border-accent overflow-hidden hover:bg-accent/20 transition-colors cursor-pointer">
               <div className="p-6">
-                <p className="text-xl font-bold text-foreground">
-                  📢 이번주의 공지사항 살펴보기 (클릭하여 자세히 보기)
-                </p>
+                <CmsText contentKey="noticeTitle" as="p" />
               </div>
               <div className="relative h-32 overflow-hidden border-t border-accent/30 bg-card">
                 <div className="p-4 text-lg text-muted-foreground">
@@ -98,9 +93,9 @@ const Index = () => {
       {/* Section 1: Payment Guidelines */}
       <section id="section1" className="py-12 px-6 md:px-12 bg-muted">
         <div className="max-w-5xl mx-auto space-y-8">
-          <h2 className="text-center text-foreground mb-8 flex items-center justify-center gap-3">
+          <h2 className="text-center mb-8 flex items-center justify-center gap-3">
             <AlertCircle className="w-10 h-10 text-primary" />
-            지금 바로 확인해야 할 '결제/주의사항'
+            <CmsText contentKey="section1Title" />
           </h2>
 
           <Accordion type="single" collapsible className="space-y-4">
@@ -255,9 +250,9 @@ const Index = () => {
       {/* Section 2: Administrative Info */}
       <section id="section2" className="py-12 px-6 md:px-12 bg-background">
         <div className="max-w-5xl mx-auto space-y-8">
-          <h2 className="text-center text-foreground mb-8 flex items-center justify-center gap-3">
+          <h2 className="text-center mb-8 flex items-center justify-center gap-3">
             <FileText className="w-10 h-10 text-primary" />
-            활동지원사 기본 서류 및 행정 안내
+            <CmsText contentKey="section2Title" />
           </h2>
 
           <Accordion type="single" collapsible className="space-y-4">
@@ -355,9 +350,9 @@ const Index = () => {
       {/* Section 3: Special Tasks */}
       <section id="section3" className="py-12 px-6 md:px-12 bg-muted">
         <div className="max-w-5xl mx-auto space-y-8">
-          <h2 className="text-center text-foreground mb-4 flex items-center justify-center gap-3">
+          <h2 className="text-center mb-4 flex items-center justify-center gap-3">
             <ShoppingCart className="w-10 h-10 text-primary" />
-            비대면 서비스제공 보고
+            <CmsText contentKey="section3Title" />
           </h2>
           <p className="text-center text-lg text-muted-foreground mb-8">
             이용자의 거동이 어려워 활동지원사가 이용자의 요청으로 잠시 이용자와 떨어져야 할 경우에는 반드시 사전에 아래 보고서를 작성하셔야 합니다.
@@ -384,9 +379,9 @@ const Index = () => {
       {/* Section 4: Forms */}
       <section id="section4" className="py-12 px-6 md:px-12 bg-background">
         <div className="max-w-5xl mx-auto space-y-8">
-          <h2 className="text-center text-foreground mb-4 flex items-center justify-center gap-3">
+          <h2 className="text-center mb-4 flex items-center justify-center gap-3">
             <FileText className="w-10 h-10 text-primary" />
-            업무 서식 참조
+            <CmsText contentKey="section4Title" />
           </h2>
 
           <div className="flex justify-center mb-6">
@@ -445,9 +440,9 @@ const Index = () => {
       {/* Section 5: 활동지원사 꿀팁 */}
       <section id="section5" className="py-12 px-6 md:px-12 bg-muted">
         <div className="max-w-5xl mx-auto space-y-8">
-          <h2 className="text-center text-foreground mb-8 flex items-center justify-center gap-3">
+          <h2 className="text-center mb-8 flex items-center justify-center gap-3">
             <Lightbulb className="w-10 h-10 text-primary" />
-            활동지원사 꿀팁
+            <CmsText contentKey="section5Title" />
           </h2>
 
           <Accordion type="single" collapsible className="space-y-4">
@@ -640,13 +635,11 @@ const Index = () => {
       {/* 조합원 가입 섹션 */}
       <section className="py-12 px-6 md:px-12 bg-background">
         <div className="max-w-5xl mx-auto text-center space-y-6">
-          <h2 className="text-foreground mb-4 flex items-center justify-center gap-3">
+          <h2 className="mb-4 flex items-center justify-center gap-3">
             <Users className="w-10 h-10 text-primary" />
-            조합원 가입 안내
+            <CmsText contentKey="memberTitle" />
           </h2>
-          <p className="text-lg text-muted-foreground">
-            부천의료복지사회적협동조합의 조합원이 되어 함께해주세요!
-          </p>
+          <CmsText contentKey="memberDescription" as="p" />
           <Button
             size="lg"
             asChild
@@ -665,13 +658,11 @@ const Index = () => {
       {/* 동백 소통채널 섹션 */}
       <section className="py-12 px-6 md:px-12 bg-muted">
         <div className="max-w-5xl mx-auto text-center space-y-6">
-          <h2 className="text-foreground mb-4 flex items-center justify-center gap-3 font-bold">
+          <h2 className="mb-4 flex items-center justify-center gap-3">
             <span className="text-3xl">💬</span>
-            동백 소통채널
+            <CmsText contentKey="communicationTitle" />
           </h2>
-          <p className="text-lg text-muted-foreground">
-            카카오톡 채널을 통해 동백과 더 빠르게 소통할 수 있습니다.
-          </p>
+          <CmsText contentKey="communicationDescription" as="p" />
           <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
             <Button
               size="lg"
@@ -697,9 +688,7 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="py-8 px-6 bg-primary text-primary-foreground text-center">
-        <p className="text-xl font-bold">
-          문의사항이 있으시면 언제든지 전화주세요
-        </p>
+        <CmsText contentKey="footerTitle" as="p" />
         <p className="text-2xl font-bold mt-4">
           📞 032-675-7517 (내선 2번)
         </p>

@@ -1,0 +1,10 @@
+{
+  "name": "easy-guide-pro-cms",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "^11.0.1",
+    "@netlify/functions": "^6.0.0"
+  }
+}

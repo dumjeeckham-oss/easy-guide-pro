@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>동백 업무 도우미 관리자</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">easy-guide-pro-cms</p>
+        <h1>화면 문구 관리자</h1>
+        <p>주요 문구의 내용, 글자색, 굵기와 크기를 수정할 수 있습니다.</p>
+      </div>
+      <a href="https://support.dong100.org/" target="_blank" rel="noopener noreferrer">공개 사이트 보기 ↗</a>
+    </header>
+
+    <main>
+      <section class="login-card" id="login-card">
+        <label for="admin-token">관리자 키</label>
+        <div class="token-row">
+          <input id="admin-token" type="password" autocomplete="current-password" placeholder="관리자 키를 입력하세요" />
+          <button id="unlock-button" type="button">편집 시작</button>
+        </div>
+        <p>관리자 키는 이 브라우저 탭을 닫으면 자동으로 지워집니다.</p>
+      </section>
+
+      <form id="editor" hidden>
+        <div class="toolbar">
+          <div>
+            <strong>편집할 문구</strong>
+            <span id="status" role="status" aria-live="polite"></span>
+          </div>
+          <div class="actions">
+            <button id="lock-button" class="secondary" type="button">잠그기</button>
+            <button id="save-button" type="submit">모든 변경 저장</button>
+          </div>
+        </div>
+        <div id="fields" class="fields"></div>
+      </form>
+    </main>
+
+    <script type="module" src="/admin.js"></script>
+  </body>
+</html>
