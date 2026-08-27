@@ -17,6 +17,11 @@ export default defineConfig(() => ({
     react(),
     VitePWA({
       registerType: "autoUpdate",
+      workbox: {
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+        skipWaiting: true,
+      },
       includeAssets: ["favicon.ico", "robots.txt"],
       manifest: {
         name: "동백 활동지원사 업무 도우미",

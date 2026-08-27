@@ -6,22 +6,37 @@ export type CmsTextStyle = {
 
 export type CmsTextEntry = CmsTextStyle & {
   text: string;
+  imageUrl: string;
+  imageAlt: string;
+  displayMode: "text" | "image" | "both";
 };
 
+const textEntry = (text: string, color: string, fontWeight: CmsTextStyle["fontWeight"], fontSize: number): CmsTextEntry => ({
+  text, color, fontWeight, fontSize, imageUrl: "", imageAlt: "", displayMode: "text",
+});
+
+const imageEntry = (alt: string): CmsTextEntry => ({
+  text: alt, color: "#262626", fontWeight: 700, fontSize: 1, imageUrl: "", imageAlt: alt, displayMode: "image",
+});
+
 export const defaultCmsContent = {
-  heroTitle: { text: "활동지원사님의\n든든한 파트너", color: "#262626", fontWeight: 700, fontSize: 3 },
-  heroSubtitle: { text: "지금 당장 필요한 정보만\n알려드립니다.", color: "#262626", fontWeight: 700, fontSize: 1.875 },
-  noticeTitle: { text: "📢 이번주의 공지사항 살펴보기 (클릭하여 자세히 보기)", color: "#262626", fontWeight: 700, fontSize: 1.25 },
-  section1Title: { text: "지금 바로 확인해야 할 '결제/주의사항'", color: "#262626", fontWeight: 700, fontSize: 2.25 },
-  section2Title: { text: "활동지원사 기본 서류 및 행정 안내", color: "#262626", fontWeight: 700, fontSize: 2.25 },
-  section3Title: { text: "비대면 서비스제공 보고", color: "#262626", fontWeight: 700, fontSize: 2.25 },
-  section4Title: { text: "업무 서식 참조", color: "#262626", fontWeight: 700, fontSize: 2.25 },
-  section5Title: { text: "활동지원사 꿀팁", color: "#262626", fontWeight: 700, fontSize: 2.25 },
-  memberTitle: { text: "조합원 가입 안내", color: "#262626", fontWeight: 700, fontSize: 2.25 },
-  memberDescription: { text: "부천의료복지사회적협동조합의 조합원이 되어 함께해주세요!", color: "#737373", fontWeight: 600, fontSize: 1.125 },
-  communicationTitle: { text: "동백 소통채널", color: "#262626", fontWeight: 700, fontSize: 2.25 },
-  communicationDescription: { text: "카카오톡 채널을 통해 동백과 더 빠르게 소통할 수 있습니다.", color: "#737373", fontWeight: 600, fontSize: 1.125 },
-  footerTitle: { text: "문의사항이 있으시면 언제든지 전화주세요", color: "#ffffff", fontWeight: 700, fontSize: 1.25 },
+  heroTitle: textEntry("활동지원사님의\n든든한 파트너", "#262626", 700, 3),
+  heroSubtitle: textEntry("지금 당장 필요한 정보만\n알려드립니다.", "#262626", 700, 1.875),
+  noticeTitle: textEntry("📢 이번주의 공지사항 살펴보기 (클릭하여 자세히 보기)", "#262626", 700, 1.25),
+  section1Title: textEntry("지금 바로 확인해야 할 '결제/주의사항'", "#262626", 700, 2.25),
+  section2Title: textEntry("활동지원사 기본 서류 및 행정 안내", "#262626", 700, 2.25),
+  section3Title: textEntry("비대면 서비스제공 보고", "#262626", 700, 2.25),
+  section4Title: textEntry("업무 서식 참조", "#262626", 700, 2.25),
+  section5Title: textEntry("활동지원사 꿀팁", "#262626", 700, 2.25),
+  memberTitle: textEntry("조합원 가입 안내", "#262626", 700, 2.25),
+  memberDescription: textEntry("부천의료복지사회적협동조합의 조합원이 되어 함께해주세요!", "#737373", 600, 1.125),
+  communicationTitle: textEntry("동백 소통채널", "#262626", 700, 2.25),
+  communicationDescription: textEntry("카카오톡 채널을 통해 동백과 더 빠르게 소통할 수 있습니다.", "#737373", 600, 1.125),
+  footerTitle: textEntry("문의사항이 있으시면 언제든지 전화주세요", "#ffffff", 700, 1.25),
+  welfareStatusImage: imageEntry("동백센터 복지현황"),
+  scheduleImage: imageEntry("급여제공 일정표"),
+  provisionRecordImage: imageEntry("활동지원급여 제공기록지"),
+  weeklyReportImage: imageEntry("주간 업무 보고"),
 } satisfies Record<string, CmsTextEntry>;
 
 export type CmsContent = typeof defaultCmsContent;
@@ -47,6 +62,11 @@ export const mergeCmsContent = (value: unknown): CmsContent => {
         fontSize: typeof entry.fontSize === "number" && entry.fontSize >= 0.75 && entry.fontSize <= 4
           ? entry.fontSize
           : fallback.fontSize,
+        imageUrl: typeof entry.imageUrl === "string" ? entry.imageUrl : fallback.imageUrl,
+        imageAlt: typeof entry.imageAlt === "string" ? entry.imageAlt : fallback.imageAlt,
+        displayMode: ["text", "image", "both"].includes(String(entry.displayMode))
+          ? entry.displayMode as CmsTextEntry["displayMode"]
+          : fallback.displayMode,
       }];
     }),
   ) as CmsContent;

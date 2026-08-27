@@ -76,7 +76,7 @@ export const FloatingNav = () => {
             aria-label="홈으로 스크롤"
           >
             <img 
-              src={dongbaekLogo} 
+              src={`${dongbaekLogo}?v=20260827-2`}
               alt="동백 장애인활동지원센터 로고" 
               className="h-10 md:h-12 w-auto object-contain" 
             />

@@ -9,7 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FloatingNav } from "@/components/FloatingNav";
-import { CmsText } from "@/components/CmsText";
+import { CmsImage, CmsText } from "@/components/CmsText";
 
 import welfareStatusImg from "@/assets/welfare-status.png";
 import scheduleImg from "@/assets/schedule.png";
@@ -27,7 +27,7 @@ const Index = () => {
         <div className="max-w-5xl mx-auto text-center space-y-8">
           {/* 동백센터 로고 */}
           <div className="flex justify-center mb-6">
-            <img src={dongbaekLogo} alt="동백 장애인활동지원센터 로고" className="h-24 md:h-32 w-auto" />
+            <img src={`${dongbaekLogo}?v=20260827-2`} alt="동백 장애인활동지원센터 로고" className="h-24 md:h-32 w-auto" />
           </div>
 
           <CmsText contentKey="heroTitle" as="h1" className="leading-tight" />
@@ -336,7 +336,7 @@ const Index = () => {
               </AccordionTrigger>
               <AccordionContent className="pt-4">
                 <Card className="bg-muted p-6">
-                  <img src={welfareStatusImg} alt="동백센터 복지현황" className="w-full h-auto" />
+                  <CmsImage contentKey="welfareStatusImage" fallbackSrc={welfareStatusImg} className="w-full h-auto" />
                 </Card>
               </AccordionContent>
             </AccordionItem>
@@ -404,7 +404,7 @@ const Index = () => {
               </AccordionTrigger>
               <AccordionContent className="pt-4">
                 <Card className="bg-muted p-6">
-                  <img src={scheduleImg} alt="급여제공 일정표" className="w-full h-auto" />
+                  <CmsImage contentKey="scheduleImage" fallbackSrc={scheduleImg} className="w-full h-auto" />
                 </Card>
               </AccordionContent>
             </AccordionItem>
@@ -415,7 +415,7 @@ const Index = () => {
               </AccordionTrigger>
               <AccordionContent className="pt-4">
                 <Card className="bg-muted p-6">
-                  <img src={provisionRecordImg} alt="활동지원급여 제공기록지" className="w-full h-auto" />
+                  <CmsImage contentKey="provisionRecordImage" fallbackSrc={provisionRecordImg} className="w-full h-auto" />
                 </Card>
               </AccordionContent>
             </AccordionItem>
@@ -426,7 +426,7 @@ const Index = () => {
               </AccordionTrigger>
               <AccordionContent className="pt-4">
                 <Card className="bg-muted p-6">
-                  <img src={weeklyReportImg} alt="주간 업무 보고" className="w-full h-auto" />
+                  <CmsImage contentKey="weeklyReportImage" fallbackSrc={weeklyReportImg} className="w-full h-auto" />
                 </Card>
               </AccordionContent>
             </AccordionItem>
