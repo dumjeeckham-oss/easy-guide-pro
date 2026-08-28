@@ -51,7 +51,7 @@ const renderFields = () => {
       <label>
         <span class="sr-only">문구 내용</span>
         <textarea name="text" maxlength="10000"></textarea>
-        ${key.endsWith("Body") ? '<small class="format-help">HTML을 사용할 수 있습니다. 예: <code>&lt;h3&gt;소제목&lt;/h3&gt;</code>, <code>&lt;strong&gt;강조&lt;/strong&gt;</code>, <code>&lt;ul&gt;&lt;li&gt;목록&lt;/li&gt;&lt;/ul&gt;</code>. 기존의 #, -, ! 줄 형식도 계속 사용할 수 있습니다.</small>' : ""}
+        ${key.endsWith("Body") ? '<small class="format-help">HTML을 사용할 수 있습니다. 예: <code>&lt;span style="color: red; font-weight: bold;"&gt;빨간 강조&lt;/span&gt;</code>, <code>&lt;ul&gt;&lt;li&gt;목록&lt;/li&gt;&lt;/ul&gt;</code>. 색상·굵기·크기·여백·목록·밑줄 스타일을 지원하며 기존 #, -, ! 줄 형식도 계속 사용할 수 있습니다.</small>' : ""}
       </label>
       <div class="style-grid">
         <label>글자색<input name="color" type="color" /></label>

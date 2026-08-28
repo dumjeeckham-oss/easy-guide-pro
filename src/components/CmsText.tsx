@@ -3,6 +3,40 @@ import DOMPurify from "dompurify";
 import { useCmsContent } from "@/hooks/useCmsContent";
 import { CmsContentKey } from "@/lib/cmsContent";
 
+const SAFE_STYLE_VALUES: Record<string, RegExp> = {
+  color: /^(#[0-9a-f]{3,8}|(?:rgb|rgba|hsl|hsla)\([\d\s.,%]+\)|[a-z]{3,20})$/i,
+  "background-color": /^(#[0-9a-f]{3,8}|(?:rgb|rgba|hsl|hsla)\([\d\s.,%]+\)|[a-z]{3,20})$/i,
+  "font-weight": /^(normal|bold|[1-9]00)$/i,
+  "font-size": /^\d+(?:\.\d+)?(?:rem|em|px|%)$/i,
+  "margin-top": /^\d+(?:\.\d+)?(?:rem|em|px|%)$/i,
+  "margin-bottom": /^\d+(?:\.\d+)?(?:rem|em|px|%)$/i,
+  "padding-left": /^\d+(?:\.\d+)?(?:rem|em|px|%)$/i,
+  "list-style-type": /^(disc|circle|square|decimal|none)$/i,
+  "text-align": /^(left|center|right)$/i,
+  "text-decoration": /^(underline|none|line-through)$/i,
+};
+
+const sanitizeInlineStyle = (style: string) => style
+  .split(";")
+  .map((declaration) => declaration.trim())
+  .filter(Boolean)
+  .map((declaration) => declaration.split(":", 2).map((part) => part.trim()))
+  .filter(([property, value]) => SAFE_STYLE_VALUES[property.toLowerCase()]?.test(value))
+  .map(([property, value]) => `${property.toLowerCase()}: ${value}`)
+  .join("; ");
+
+DOMPurify.addHook("uponSanitizeAttribute", (_node, data) => {
+  if (data.attrName !== "style") return;
+  const safeStyle = sanitizeInlineStyle(data.attrValue);
+  if (safeStyle) data.attrValue = safeStyle;
+  else data.keepAttr = false;
+});
+
+DOMPurify.addHook("afterSanitizeAttributes", (node) => {
+  if (!(node instanceof HTMLAnchorElement) || node.target !== "_blank") return;
+  node.rel = "noopener noreferrer";
+});
+
 type CmsTextProps = {
   contentKey: CmsContentKey;
   as?: ElementType;
@@ -46,7 +80,7 @@ export const CmsRichText = ({ contentKey, className }: { contentKey: CmsContentK
   if (containsHtml) {
     const safeHtml = DOMPurify.sanitize(content.text, {
       ALLOWED_TAGS: ["p", "br", "strong", "b", "em", "i", "u", "s", "ul", "ol", "li", "h3", "h4", "blockquote", "a", "span"],
-      ALLOWED_ATTR: ["href"],
+      ALLOWED_ATTR: ["href", "target", "rel", "style"],
     });
     return (
       <div
