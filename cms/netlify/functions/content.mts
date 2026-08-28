@@ -91,7 +91,7 @@ const mergeStoredContent = (value: unknown): Content => {
 
 const isAuthorized = (request: Request) => {
   const expectedHash = Netlify.env.get("CMS_ADMIN_TOKEN_HASH");
-  const token = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "") ?? "";
+  const token = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "").trim() ?? "";
   if (!expectedHash || !token) return false;
   const provided = createHash("sha256").update(token).digest();
   const expected = Buffer.from(expectedHash, "hex");
@@ -102,8 +102,12 @@ export default async (request: Request, context: Context) => {
   const store = getStore({ name: "easy-guide-pro-content", consistency: "strong" });
 
   if (request.method === "GET") {
+    const verifiesAdminKey = new URL(request.url).searchParams.get("verify") === "1";
+    if (verifiesAdminKey && !isAuthorized(request)) {
+      return json({ error: "관리자 키가 올바르지 않습니다. 키 앞뒤의 공백도 확인해 주세요." }, 401);
+    }
     const stored = await store.get(CONTENT_KEY, { type: "json" });
-    return json(mergeStoredContent(stored), 200, true);
+    return json(mergeStoredContent(stored), 200, !verifiesAdminKey);
   }
 
   if (request.method !== "PUT") return json({ error: "허용되지 않은 요청입니다." }, 405);

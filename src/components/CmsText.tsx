@@ -1,4 +1,5 @@
 import { ElementType, ReactNode } from "react";
+import DOMPurify from "dompurify";
 import { useCmsContent } from "@/hooks/useCmsContent";
 import { CmsContentKey } from "@/lib/cmsContent";
 
@@ -40,6 +41,22 @@ export const CmsImage = ({ contentKey, fallbackSrc, className }: {
 
 export const CmsRichText = ({ contentKey, className }: { contentKey: CmsContentKey; className?: string }) => {
   const content = useCmsContent()[contentKey];
+  const containsHtml = /<\/?[a-z][\s\S]*>/i.test(content.text);
+
+  if (containsHtml) {
+    const safeHtml = DOMPurify.sanitize(content.text, {
+      ALLOWED_TAGS: ["p", "br", "strong", "b", "em", "i", "u", "s", "ul", "ol", "li", "h3", "h4", "blockquote", "a", "span"],
+      ALLOWED_ATTR: ["href"],
+    });
+    return (
+      <div
+        className={`cms-rich-text ${className ?? ""}`}
+        style={{ color: content.color, fontWeight: content.fontWeight, fontSize: `${content.fontSize}rem` }}
+        dangerouslySetInnerHTML={{ __html: safeHtml }}
+      />
+    );
+  }
+
   const lines = content.text.split("\n");
   const items: ReactNode[] = [];
   let list: string[] = [];
@@ -64,5 +81,5 @@ export const CmsRichText = ({ contentKey, className }: { contentKey: CmsContentK
   });
   flushList();
 
-  return <div className={className} style={{ color: content.color, fontWeight: content.fontWeight, fontSize: `${content.fontSize}rem` }}>{items}</div>;
+  return <div className={`cms-rich-text ${className ?? ""}`} style={{ color: content.color, fontWeight: content.fontWeight, fontSize: `${content.fontSize}rem` }}>{items}</div>;
 };
