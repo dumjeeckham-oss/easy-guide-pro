@@ -2,11 +2,18 @@ const labels = {
   heroTitle: "첫 화면 큰 제목",
   heroSubtitle: "첫 화면 보조 제목",
   noticeTitle: "주간 공지사항 제목",
+  noticeBody: "주간 공지사항 하위 내용",
   section1Title: "결제/주의사항 구역 제목",
+  voucherWarningsBody: "바우처 결제 유의사항 하위 내용",
+  voucherTimeBody: "바우처시간 안내 하위 내용",
   section2Title: "기본 서류 구역 제목",
+  employmentDocumentsBody: "입사서류 하위 내용",
+  officeAddress: "동백 사무실 주소",
   section3Title: "비대면 서비스 구역 제목",
+  section3Description: "비대면 서비스 하위 설명",
   section4Title: "업무 서식 구역 제목",
   section5Title: "활동지원사 꿀팁 구역 제목",
+  toiletDescription: "공중화장실 안내 하위 내용",
   memberTitle: "조합원 가입 제목",
   memberDescription: "조합원 가입 설명",
   communicationTitle: "소통채널 제목",
@@ -43,7 +50,8 @@ const renderFields = () => {
       <h2>${labels[key] ?? key}</h2>
       <label>
         <span class="sr-only">문구 내용</span>
-        <textarea name="text" maxlength="300"></textarea>
+        <textarea name="text" maxlength="10000"></textarea>
+        ${key.endsWith("Body") ? '<small class="format-help">줄 앞에 <b># </b>를 쓰면 소제목, <b>- </b>를 쓰면 글머리표, <b>! </b>를 쓰면 빨간 강조문이 됩니다.</small>' : ""}
       </label>
       <div class="style-grid">
         <label>글자색<input name="color" type="color" /></label>

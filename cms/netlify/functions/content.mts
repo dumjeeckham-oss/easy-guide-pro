@@ -4,8 +4,9 @@ import type { Config, Context } from "@netlify/functions";
 
 const CONTENT_KEY = "site-content";
 const ALLOWED_KEYS = [
-  "heroTitle", "heroSubtitle", "noticeTitle", "section1Title", "section2Title",
-  "section3Title", "section4Title", "section5Title", "memberTitle", "memberDescription",
+  "heroTitle", "heroSubtitle", "noticeTitle", "noticeBody", "section1Title",
+  "voucherWarningsBody", "voucherTimeBody", "section2Title", "employmentDocumentsBody", "officeAddress",
+  "section3Title", "section3Description", "section4Title", "section5Title", "toiletDescription", "memberTitle", "memberDescription",
   "communicationTitle", "communicationDescription", "footerTitle",
   "welfareStatusImage", "scheduleImage", "provisionRecordImage", "weeklyReportImage",
 ] as const;
@@ -21,11 +22,18 @@ const DEFAULT_CONTENT = {
   heroTitle: textEntry("활동지원사님의\n든든한 파트너", "#262626", 700, 3),
   heroSubtitle: textEntry("지금 당장 필요한 정보만\n알려드립니다.", "#262626", 700, 1.875),
   noticeTitle: textEntry("📢 이번주의 공지사항 살펴보기 (클릭하여 자세히 보기)", "#262626", 700, 1.25),
+  noticeBody: textEntry("# 📌 최신 공지사항\n공지사항 내용을 확인하시려면 이 영역을 눌러주세요.\n! 👆 새 창에서 열립니다 (더 빠르고 안정적)", "#737373", 400, 1.125),
   section1Title: textEntry("지금 바로 확인해야 할 '결제/주의사항'", "#262626", 700, 2.25),
+  voucherWarningsBody: textEntry("- 활동지원급여는 수급자 본인만을 위해 제공해야 함\n- 급여제공 시간에는 실제 서비스 제공 및 준비·마무리 시간이 포함됨\n- 실제 서비스가 제공되지 않는 단순 대기시간은 인정되지 않음\n! 개인정보 보호 : 업무상 알게 된 수급자의 개인정보에 관한 비밀 엄수\n! 이용자 부재 시 결제 및 바우처 카드 소지는 금지\n! 급여를 제공하지 않고 비용을 청구하는 행위는 부정결제로 금지", "#262626", 400, 1.125),
+  voucherTimeBody: textEntry("# 1) 보건복지부 바우처시간\n해당 월에 사용하지 못한 시간은 당해년도까지 이월 가능합니다.\n! 년도가 바뀌면 남은 시간은 소멸됩니다.\n\n# 2) 시추가·도추가 지원 바우처\n보건복지부 시간을 모두 사용한 뒤 추가 시간을 사용할 수 있습니다.\n! 시추가·도추가는 이월되지 않습니다.", "#262626", 400, 1.125),
   section2Title: textEntry("활동지원사 기본 서류 및 행정 안내", "#262626", 700, 2.25),
+  employmentDocumentsBody: textEntry("# 입사서류 안내\n- 폰 셀카사진(본인) 1장 - 명찰용\n- 주민등록등본 1부\n- 건강진단서 결과 1부\n- 통장사본 (농협) 1부\n- 장애인활동지원사 이수증 사본 1부\n- 경력증명서/재직증명서", "#262626", 400, 1.125),
+  officeAddress: textEntry("부천시 원미로 97번길 31, 3층\n(원미동)", "#262626", 700, 1.5),
   section3Title: textEntry("비대면 서비스제공 보고", "#262626", 700, 2.25),
+  section3Description: textEntry("이용자의 거동이 어려워 활동지원사가 이용자의 요청으로 잠시 이용자와 떨어져야 할 경우에는 반드시 사전에 아래 보고서를 작성하셔야 합니다.", "#737373", 400, 1.125),
   section4Title: textEntry("업무 서식 참조", "#262626", 700, 2.25),
   section5Title: textEntry("활동지원사 꿀팁", "#262626", 700, 2.25),
+  toiletDescription: textEntry("공중화장실 지도입니다.\n지도를 손가락으로 넓혀서 내 인근의 화장실을 찾아보세요.", "#737373", 400, 1.125),
   memberTitle: textEntry("조합원 가입 안내", "#262626", 700, 2.25),
   memberDescription: textEntry("부천의료복지사회적협동조합의 조합원이 되어 함께해주세요!", "#737373", 600, 1.125),
   communicationTitle: textEntry("동백 소통채널", "#262626", 700, 2.25),
@@ -60,7 +68,7 @@ const validateContent = (value: unknown): Content | null => {
   const entries: Array<readonly [string, ContentEntry]> = [];
   for (const key of ALLOWED_KEYS) {
     const entry = record[key] as Partial<ContentEntry> | undefined;
-    if (!entry || typeof entry.text !== "string" || entry.text.length > 300) return null;
+    if (!entry || typeof entry.text !== "string" || entry.text.length > 10000) return null;
     if (typeof entry.color !== "string" || !/^#[0-9a-fA-F]{6}$/.test(entry.color)) return null;
     if (![400, 600, 700, 800, 900].includes(Number(entry.fontWeight))) return null;
     if (typeof entry.fontSize !== "number" || entry.fontSize < 0.75 || entry.fontSize > 4) return null;

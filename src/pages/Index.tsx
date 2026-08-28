@@ -9,7 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FloatingNav } from "@/components/FloatingNav";
-import { CmsImage, CmsText } from "@/components/CmsText";
+import { CmsImage, CmsRichText, CmsText } from "@/components/CmsText";
 
 import welfareStatusImg from "@/assets/welfare-status.png";
 import scheduleImg from "@/assets/schedule.png";
@@ -58,11 +58,7 @@ const Index = () => {
                 <CmsText contentKey="noticeTitle" as="p" />
               </div>
               <div className="relative h-32 overflow-hidden border-t border-accent/30 bg-card">
-                <div className="p-4 text-lg text-muted-foreground">
-                  <p className="font-bold text-foreground mb-2">📌 최신 공지사항</p>
-                  <p>공지사항 내용을 확인하시려면 이 영역을 눌러주세요.</p>
-                  <p className="text-primary mt-2">👆 새 창에서 열립니다 (더 빠르고 안정적)</p>
-                </div>
+                <CmsRichText contentKey="noticeBody" className="p-4 space-y-2" />
                 <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-card to-transparent" />
               </div>
             </Card>
@@ -105,6 +101,8 @@ const Index = () => {
                 ⚠️ 바우처 결제시 유의사항
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed space-y-3 pt-4">
+                <CmsRichText contentKey="voucherWarningsBody" className="space-y-3" />
+                {/*
                 <ul className="space-y-3 list-disc list-inside">
                   <li>활동지원급여는 수급자 본인만을 위해 제공해야 함</li>
                   <li>급여제공 시간은 활동지원사가 수급자의 가정에 도착했을 때부터 필요한 서비스를 제공하기 위한 준비, 서비스의 제공 및 마무리에 소요되는 총시간을 말함</li>
@@ -130,6 +128,7 @@ const Index = () => {
                   <li>자신이 활동지원급여를 제공하는 수급자를 내다 버리거나 의식주를 포함한 보호 및 간병 등을 소홀히 하는 경우</li>
                   <li className="font-bold text-destructive">거짓이나 그 밖의 부정한 방법으로 활동지원급여비용을 받은 경우</li>
                 </ul>
+                */}
               </AccordionContent>
             </AccordionItem>
 
@@ -139,6 +138,8 @@ const Index = () => {
                 ⏰ 바우처시간의 이해
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed space-y-4 pt-4">
+                <CmsRichText contentKey="voucherTimeBody" className="space-y-3" />
+                {/*
                 <div>
                   <p className="font-bold text-xl mb-2">1) 보건복지부 바우처시간</p>
                   <p className="mb-2">
@@ -178,6 +179,7 @@ const Index = () => {
                     </p>
                   </Card>
                 </div>
+                */}
               </AccordionContent>
             </AccordionItem>
             {/* 바우처 결제 방법 */}
@@ -262,7 +264,8 @@ const Index = () => {
                 📋 입사서류
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed space-y-3 pt-4">
-                <p className="font-bold">안녕하세요~</p>
+                <CmsRichText contentKey="employmentDocumentsBody" className="space-y-3" />
+                {/* <p className="font-bold">안녕하세요~</p>
                 <p className="font-bold">부천의료복지사회적협동조합 동백 장애인활동지원센터입니다^^</p>
                 <p className="font-bold mb-4">입사서류 안내 드립니다!</p>
                 <ul className="space-y-2 list-disc list-inside">
@@ -281,7 +284,7 @@ const Index = () => {
                      </a>
                    </li>
                   <li>피부양자 등록 원할 시: 피부양자대상자기준 가족관계증명서상세본</li>
-                </ul>
+                </ul> */}
               </AccordionContent>
             </AccordionItem>
 
@@ -295,9 +298,7 @@ const Index = () => {
             </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed pt-4 space-y-4">
                 <Card className="bg-primary/10 p-6">
-                  <p className="text-2xl font-bold text-center">
-                    부천시 원미로 97번길 31, 3층<br />(원미동)
-                  </p>
+                  <CmsText contentKey="officeAddress" as="p" className="text-center" />
                 </Card>
                 <div className="flex flex-col gap-3">
                   <a 
@@ -354,9 +355,7 @@ const Index = () => {
             <ShoppingCart className="w-10 h-10 text-primary" />
             <CmsText contentKey="section3Title" />
           </h2>
-          <p className="text-center text-lg text-muted-foreground mb-8">
-            이용자의 거동이 어려워 활동지원사가 이용자의 요청으로 잠시 이용자와 떨어져야 할 경우에는 반드시 사전에 아래 보고서를 작성하셔야 합니다.
-          </p>
+          <CmsText contentKey="section3Description" as="p" className="text-center mb-8" />
 
           <div className="flex justify-center">
             <Button
@@ -455,10 +454,7 @@ const Index = () => {
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed pt-4 space-y-4">
-                <p className="text-muted-foreground">
-                  공중화장실 지도입니다.<br />
-                  지도를 손가락으로 넓혀서 내 인근의 화장실을 찾아보세요
-                </p>
+                <CmsText contentKey="toiletDescription" as="p" />
                 <Button
                   size="lg"
                   asChild
