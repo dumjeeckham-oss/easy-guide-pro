@@ -40,20 +40,21 @@ const Index = () => {
             rel="noopener noreferrer"
             className="block"
           >
-            <Card className="bg-primary/10 border-4 border-primary overflow-hidden hover:bg-primary/20 active:bg-primary/30 transition-colors cursor-pointer shadow-xl">
-              <div className="p-6 md:p-8">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <span className="bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-lg font-extrabold shadow-sm">
-                    📢 공지사항
-                  </span>
+            <Card className="notice-board overflow-hidden cursor-pointer transition-transform hover:scale-[1.01] active:scale-[0.99]">
+              <div className="p-6 md:p-8 text-center space-y-5">
+                <div className="inline-flex items-center gap-2 bg-white text-primary px-5 py-2 rounded-full text-xl md:text-2xl font-extrabold shadow-md">
+                  <span className="text-2xl md:text-3xl">📢</span>
+                  <span>공지사항</span>
                 </div>
-                <CmsText contentKey="noticeTitle" as="p" className="text-center leading-tight" />
+                <CmsText contentKey="noticeTitle" as="p" className="!text-white !text-2xl md:!text-3xl font-extrabold leading-tight text-center" />
+                <p className="!text-white/90 text-lg md:text-xl font-bold">
+                  👆 누르면 노션에서 자세히 보기
+                </p>
               </div>
-              <div className="relative overflow-hidden border-t-4 border-primary/30 bg-card">
+              <div className="relative overflow-hidden border-t-4 border-white/30 bg-white/10">
                 <div className="p-5 md:p-6">
-                  <CmsRichText contentKey="noticeBody" className="space-y-2" />
+                  <CmsRichText contentKey="noticeBody" className="!text-white !text-lg md:!text-xl space-y-2" />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-card to-transparent" />
               </div>
             </Card>
           </a>
