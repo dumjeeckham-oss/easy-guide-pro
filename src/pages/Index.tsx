@@ -1,4 +1,4 @@
-import { Phone, FileText, ShoppingCart, AlertCircle, MapPin, Users, Lightbulb, Heart, MapPinned } from "lucide-react";
+import { FileText, ShoppingCart, AlertCircle, MapPin, Users, Lightbulb, Heart, MapPinned } from "lucide-react";
 import { CanvaViewer } from "@/components/CanvaViewer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
