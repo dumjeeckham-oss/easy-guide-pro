@@ -679,9 +679,9 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-6 bg-primary text-primary-foreground text-center">
         <CmsText contentKey="footerTitle" as="p" />
-        <p className="text-2xl font-bold mt-4">
+        <a href="tel:070-4127-1611" className="block text-2xl font-bold mt-4">
           📞 032-675-7517 (내선 2번)
-        </p>
+        </a>
         <div className="mt-4 space-y-1 text-lg">
           <p>업무폰1 김세미: <a href="tel:010-3423-7517" className="underline">010-3423-7517</a></p>
           <p>업무폰2 최혜양: <a href="tel:010-9092-7517" className="underline">010-9092-7517</a></p>
