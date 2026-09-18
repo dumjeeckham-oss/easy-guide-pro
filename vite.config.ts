@@ -24,27 +24,32 @@ export default defineConfig(() => ({
       },
       includeAssets: ["favicon.ico", "robots.txt"],
       manifest: {
+        id: appBase,
         name: "동백 활동지원사 업무 도우미",
         short_name: "동백 도우미",
         description: "활동지원사님을 위한 가장 빠르고 쉬운 업무 안내",
+        lang: "ko",
         theme_color: "#E74C3C",
         background_color: "#ffffff",
         display: "standalone",
         orientation: "portrait",
+        scope: appBase,
         start_url: appBase,
         icons: [
           {
             src: "pwa-192x192.png",
             sizes: "192x192",
             type: "image/png",
+            purpose: "any",
           },
           {
             src: "pwa-512x512.png",
             sizes: "512x512",
             type: "image/png",
+            purpose: "any",
           },
           {
-            src: "pwa-512x512.png",
+            src: "pwa-maskable-512x512.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "maskable",
